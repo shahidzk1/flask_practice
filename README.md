@@ -20,3 +20,8 @@ To Get the No content method
     ```
     curl -X GET -i -w '\n' localhost:5000/exp
     ```
+  Fake data has been added, to get a person by first name
+  
+    ```
+    curl -X GET -i -w '\n' "localhost:5000/name_search?q=Abdel"
+    ```
