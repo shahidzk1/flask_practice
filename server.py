@@ -7,3 +7,5 @@ app = Flask(__name__)
 def index():
     #return html
     return "hello world"
+    #return json
+    #return "message": "Hello World"
