@@ -16,6 +16,7 @@ To Get the No content method
   curl -X GET -i -w '\n' localhost:5000/no_content
   ```
  To Get the explicit 
+ 
     ```
     curl -X GET -i -w '\n' localhost:5000/exp
     ```
