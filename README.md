@@ -11,7 +11,11 @@ in another terminal run
   ```
 The -X argument specifies the GET command, and the -i argument displays the header from the response.
 
-To run the No content method
+To Get the No content method
   ```
   curl -X GET -i -w '\n' localhost:5000/no_content
   ```
+ To Get the explicit 
+    ```
+    curl -X GET -i -w '\n' localhost:5000/exp
+    ```
