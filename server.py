@@ -24,7 +24,12 @@ def no_content():
 #Send custom HTTP code back with the make_response() method
 @app.route("/exp")
 def index_explicit():
-    resp = make_response({"message":"Hello"})
-    resp.status_code = 200
+    """return 'Hello World' message with a status code of 200
+    Returns:
+        string: Hello World
+        status code: 200
+    """
+    res = make_response({"message":"Hello"})
+    res.status_code = 200
     return resp
 
