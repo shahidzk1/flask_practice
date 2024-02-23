@@ -10,6 +10,7 @@ def index():
     #return json
     #return "message": "Hello World"
 
+# URL of /no_content
 @app.route("/no_content")
 def no_content():
     """return 'no content found' with a status of 204
