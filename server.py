@@ -33,6 +33,8 @@ def index_explicit():
     res.status_code = 200
     return resp
 
+#######insert csv data
+
 data = [
     {
         "id": "3b58aade-8415-49dd-88db-8d7bce14932a",
@@ -103,10 +105,46 @@ def name_search():
     query = request.args.get("q")
 
     if not query:
-        return {"message": "Invalid input parameter"}, 422
+        return {"message": "Invalid input parameter, insert q"}, 422
 
     for person in data:
         if query.lower() in person["first_name"].lower():
             return person
 
     return ({"message": "Person not found"}, 404)
+
+@app.route("/count")
+def count():
+    try:
+        return {"data count": len(data)}, 200
+    except NameError:
+        return {"message": "data not defined"}, 500
+
+@app.route("/person/<uuid:id>")
+def find_by_uuid(id):
+    for person in data:
+        if person["id"] == str(id):
+            return person
+    return {"message": "person not found in data"}, 404
+
+@app.route("/person/<uuid:id>", methods=['DELETE'])
+def delete_by_uuid(id):
+    for person in data:
+        if person["id"] == str(id):
+            data.remove(person)
+            #####save the csv file again
+            return {"message":"id of person deleted"}, 200
+    return {"message": "person not found"}, 404
+
+
+@app.route("/person", methods=['POST'])
+def add_by_uuid():
+    new_person = request.json
+    if not new_person:
+        return {"message": "Invalid input parameter"}, 422
+    # code to validate new_person ommited
+    try:
+        data.append(new_person)
+    except NameError:
+        return {"message": "data not defined"}, 500
+    return {"message": f"{new_person['id']}"}, 200
