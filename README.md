@@ -48,3 +48,9 @@ To Get the No content method
           "avatar": "http://dummyimage.com/139x100.png/cc0000/ffffff"
   }'
   ```
+
+  For error handling
+
+    ```
+    curl -X POST -i -w '\n' http://localhost:5000/notvalid
+    ```
