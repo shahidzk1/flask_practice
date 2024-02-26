@@ -49,7 +49,7 @@ To Get the No content method
   }'
   ```
 
-  For error handling
+For error handling
 
     ```
     curl -X POST -i -w '\n' http://localhost:5000/notvalid
