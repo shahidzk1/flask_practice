@@ -1,7 +1,7 @@
 from flask import Flask, make_response, request
 # create Flask application by initializing the Flask class
 app = Flask(__name__)
-#create first route
+#create first route. @app.route(“/“) is a Python decorator provided by Flask to assign URLs in the app to functions.
 @app.route("/")
 #method for the main root URL 
 def index():
