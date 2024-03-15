@@ -1,3 +1,4 @@
+#python app.py
 # Importing flask packages 
 #request - to process the GET and POST requests
 #url_for - to access the url for a given function using its decorator
